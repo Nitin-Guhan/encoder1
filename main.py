@@ -1,4 +1,4 @@
-def encode_password(password):
+def encode(password):
     password = list(password)
     count = 0
     for num in password:
@@ -19,6 +19,24 @@ def encode_password(password):
     for value in password:
         nstring += str(value)
     return nstring
+def decode(Password):
+    nstring = ''
+    for char in Password:
+        if char > 2:
+            nstring.append(char - 3)
+        else:
+            if char == '2':
+                nstring.append(9)
+            elif char == '1':
+                nstring.append(8)
+            elif char == '0':
+                nstring.append(7)
+    return nstring
+
+
+
+
+
 
 
 
@@ -30,7 +48,7 @@ if __name__ == '__main__':
         option = int(input('Please enter an option: '))
         if option == 1:
             password = input('Please enter your password to encode: ')
-            encoded_pass = encode_password(password)
+            encoded_pass = encode(password)
             print('Your password has been encoded and stored!\n')
         elif option == 2:
             print(f'The encoded password is {encoded_pass}, and the original password is {password}\n')
