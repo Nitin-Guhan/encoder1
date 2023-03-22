@@ -22,15 +22,15 @@ def encode(password):
 def decode(Password):
     nstring = ''
     for char in Password:
-        if char > 2:
-            nstring.append(char - 3)
+        if int(char) > 2:
+            nstring += str((int(char) - 3))
         else:
             if char == '2':
-                nstring.append(9)
+                nstring += str('9')
             elif char == '1':
-                nstring.append(8)
+                nstring += str('8')
             elif char == '0':
-                nstring.append(7)
+                nstring += str('7')
     return nstring
 
 
