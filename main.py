@@ -51,7 +51,7 @@ if __name__ == '__main__':
             encoded_pass = encode(password)
             print('Your password has been encoded and stored!\n')
         elif option == 2:
-            print(f'The encoded password is {encoded_pass}, and the original password is {password}\n')
+            print(f'The encoded password is {encoded_pass}, and the original password is {decode(encoded_pass)}\n')
         elif option == 3:
             encoder_decoder = False
 
